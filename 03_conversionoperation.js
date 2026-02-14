@@ -48,3 +48,7 @@ let somennuber = 33
 let stringnumber = String(somennuber)
 console.log(typeof(stringnumber))
 console.log(stringnumber)
+
+let value = 3
+let negative = -value
+console.log(negative)
