@@ -5,7 +5,7 @@ console.log(name +  repo + " Value")
 console.log(`My name is ${name} and I have ${repo} repositories`) // string interpolation using backticks
 
 const gamename = new String("Valorant") // creating a string using the String constructor
-
+console.log(gamename) // prints the string object
 console.log(gamename[0])
 console.log(gamename.__proto__) // shows the prototype of the string object
 console.log(gamename.length) // length property 
