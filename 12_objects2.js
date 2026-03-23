@@ -36,3 +36,14 @@ console.log(Object.values(Netflixuser)) // an array of the values of the object
 console.log(Object.entries(Netflixuser)) // an array of the key-value pairs of the object
 
 console.log(Netflixuser.hasOwnProperty('isLoggedIn')) // true
+
+const course = {
+    courseName: "JavaScript",
+    courseInstructor: "abcd",
+    coursePrice: 999,
+}
+
+const {courseInstructor: instructor} = course // object destructuring to extract the value of courseInstructor and assign it to a new variable instructor
+
+console.log(instructor);
+console.log(course.courseInstructor);
