@@ -36,3 +36,27 @@ function loginUserMessage(username){
 }
 console.log(loginUserMessage("Shreshtha"))
 console.log(loginUserMessage()) // underfined 
+
+function calculateCartPrice(...num1){
+    return num1
+} 
+console.log(calculateCartPrice(100,200,300,400)) //  rest operator to collect all the arguments into an array
+
+const user = {
+    username: "shreshtha",
+    price: 899
+}
+
+function handleObject(anyobject){
+    console.log(` Username is ${anyobject.username} and the price is ${anyobject.price}`);
+
+}
+handleObject(user) 
+
+const myNewarray = [1,2,3,4,5]
+
+function givesecondvalue(anyarray){
+    return anyarray[1]
+}
+console.log(givesecondvalue(myNewarray));
+// console.log(givesecondvalue([20,30,40,50])) will also work because we are passing an array as an argument to the function and the function will return the second value of the array which is 30 in this case
