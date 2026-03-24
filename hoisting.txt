@@ -1,0 +1,5 @@
+JavaScript moves declarations (not initializations) to the top of their scope before execution
+var x     //hoisted 
+
+console.log(a);
+var a = 10; // output will be undefined because var a = 10 is not hoisted as it is initialized 
