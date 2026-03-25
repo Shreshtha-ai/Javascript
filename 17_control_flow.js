@@ -56,3 +56,22 @@ if(userLoggedIn && debitcard){ // logical AND operator
 if( Loggedinfromgoogle || Loggedinfromgmail){ // logical OR operator
     console.log("You can login");
 }
+
+// Nullish Coaelscing operator (??): null undefined
+
+let var1;
+var1 = 5??10
+console.log(var1)
+
+var2 = null ?? 10 
+console.log(var2) // prints the value which is not null 
+
+var3 = null ?? undefined
+console.log(var3) // prints undefined
+
+// Ternary operator 
+
+// conclusion ? true : false 
+
+const iceTeaprice = 100
+iceTeaprice <= 80 ? console.log("less than 80") : console.log("more than 80")
