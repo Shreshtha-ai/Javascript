@@ -1,0 +1,76 @@
+=========================================
+Difference Between for...in and for...of
+=========================================
+
+1. WHAT DO THEY ITERATE OVER?
+- `for...in` iterates over the **enumerable properties (keys)** of an object or indices of an array.
+- `for...of` iterates over the **values** of an iterable object (Arrays, Strings, Maps, Sets, etc.).
+
+---
+
+2. HOW DO PLAIN OBJECTS BEHAVE?
+
+Plain Objects {} are NOT iterable by default. 
+- You MUST use `for...in` if you want to iterate over an object's keys.
+- You CANNOT use `for...of` directly on a plain object.
+
+-- Code Snippet (Objects) --
+
+const myObj = {
+    'js': 'Javascript',
+    'py': 'Python'
+};
+
+// ✅ WORKS: using for...in
+for (const key in myObj) {
+    console.log(key, '->', myObj[key]);
+}
+/* Output:
+   js -> Javascript
+   py -> Python
+*/
+
+// ❌ FAILS: using for...of
+for (const val of myObj) {
+    console.log(val);
+}
+// Output: TypeError: myObj is not iterable
+
+// Workaround to use for...of with Objects:
+// Use Object.entries() to make it iterable:
+for (const [key, value] of Object.entries(myObj)) {
+    console.log(key, '->', value);
+}
+
+---
+
+3. HOW DO MAPS BEHAVE?
+
+Maps are built-in iterables.
+- You MUST use `for...of` to iterate over Map entries.
+- You CANNOT use `for...in` on a Map (it won't throw an error, it just won't do anything because Map entries aren't stored as enumerable keys).
+
+-- Code Snippet (Maps) --
+
+const myMap = new Map();
+myMap.set('IN', 'India');
+myMap.set('USA', 'United States');
+
+// ✅ WORKS: using for...of
+for (const [key, value] of myMap) {
+    console.log(key, '->', value);
+}
+/* Output:
+   IN -> India
+   USA -> United States
+*/
+
+// ❌ FAILS (Silently): using for...in
+for (const key in myMap) {
+    console.log(key);
+}
+// No Output: Map entries are ignored by for...in
+
+
+
+
