@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation </title>
+</head>
+<body style = "background-color: #212121; color: white">
+    <ul class = "language">
+        <li>JavaScript</li>
+        
+    </ul>
+   
+</body>
+<script>
+    function addLanguage(langname){
+        const li = document.createElement('li');
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("C")
+    addLanguage("typescript")
+
+// optimising the above code 
+
+function addLangOptimised(langname){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langname));
+    document.querySelector('.language').appendChild(li);
+}
+addLangOptimised("python") // it optimizes the code as it does not traverse the whole code 
+
+//edit
+const secondLang = document.querySelector("li:nth-child(2)")
+console.log(secondLang);
+// secondLang.innerHTML = "Golang"
+
+const newLi = document.createElement('li')
+newLi.textContent = "Mojo"
+secondLang.replaceWith(newLi)
+
+//another edit method
+
+const firstLang = document.querySelector("li:first-child")
+firstLang.outerHTML = '<li>typescript</li>'
+
+//remove 
+
+const thirdLang = document.querySelector("li:nth-child(3)")
+thirdLang.remove() 
+
+
+</script>
+</html>
